@@ -1,5 +1,6 @@
 <div *ngIf="!!character">
-    <li *ngFor="let attribute of character.attributes">
+    <h1>{{character.charClass}}</h1>
+    <li *ngFor="let attribute of getAttributes()">
         {{attribute}}
     </li>
 </div>

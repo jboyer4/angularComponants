@@ -9,7 +9,7 @@
 
 <div class="content" role="main">
     <char-gen (newCharCreated)="setChar($event)"></char-gen>
-    <char-display *ngif="!!getChar()" [character]="getChar()"></char-display>
+    <char-display *ngIf="!!getChar()" [character]="getChar()"></char-display>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
