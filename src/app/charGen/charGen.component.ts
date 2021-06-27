@@ -40,10 +40,13 @@ export class charGen {
     }
     private rollAttribute(): number {
         const rolls = [];
-        for (let i = 0; i < 3; i++) {
-            rolls.push(Math.floor(Math.random() * 20) + 1);
+        for (let i = 0; i < 4; i++) {
+            rolls.push(Math.floor(Math.random() * 6) + 1);
         }
-        return Math.max(...rolls);
+        let total = 0;
+        const drop = Math.min(...rolls);
+        rolls.forEach((roll) => { if (roll != drop) { total += roll } });
+        return total;
     }
 
 }
