@@ -29,7 +29,8 @@
 </div>
 
 <div class="content" role="main">
-    <char-gen></char-gen>
+    <char-gen (curChar)="setChar($event)"></char-gen>
+    <char-display *ngif="!!getChar()" [character]="getChar()"></char-display>
     <!-- Highlight Card -->
     <div class="card highlight-card card-small">
 

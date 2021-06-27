@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Character } from "../charGen/character";
 
 @Component({
     selector: 'char-display',
@@ -6,5 +7,8 @@ import { Component } from "@angular/core";
     styleUrls: ['./charDisplay.component.css'],
 })
 export class charDisplay {
+    @Input() character?: Character;
+    constructor() {
 
+    }
 }

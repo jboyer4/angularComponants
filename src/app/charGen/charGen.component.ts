@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Output, EventEmitter } from "@angular/core";
 import { Attributes, Character } from "./character";
 
 @Component({
@@ -7,7 +7,8 @@ import { Attributes, Character } from "./character";
     styleUrls: ['./charGen.component.css'],
 })
 export class charGen {
-    title = 'character-generator';
+    //title = 'character-generator';
+    @Output() newCharCreated = new EventEmitter<Character>();
     public charClass?: string;
     public values = [0, 0, 0, 0, 0, 0];
     private classes =
@@ -25,7 +26,7 @@ export class charGen {
         ];
     constructor() {
     }
-    public newChar(): Character {
+    public newChar(): void {
         const stats: Attributes = {
             strength: this.rollAttribute(),
             dexterity: this.rollAttribute(),
@@ -35,7 +36,7 @@ export class charGen {
             charisma: this.rollAttribute(),
         };
         const randomClass = this.classes[Math.floor(Math.random() * this.classes.length)];
-        return new Character(stats, randomClass);
+        this.newCharCreated.emit(new Character(stats, randomClass));
     }
     private rollAttribute(): number {
         const rolls = [];
