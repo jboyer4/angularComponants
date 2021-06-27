@@ -30,12 +30,13 @@ export type Skills = {
 }
 export class character {
     public attributes: Attributes;
-    public class: string;
-    public proficiencies: Skills;
-    public proficiencyBonus: number;
-    public maxhp: number;
-    constructor(attributes: Attributes, proficiencies: Skills, level) {
+    public charClass: string;
+    public proficiencies?: Skills;
+    public proficiencyBonus?: number;
+    public maxhp?: number;
+    constructor(attributes: Attributes, charClass: string, proficiencies?: Skills, level?: number) {
         this.attributes = attributes;
-
+        this.charClass = charClass;
+        this.proficiencies = proficiencies ?? {};
     }
 }
