@@ -32,9 +32,6 @@ export class charGen {
         ];
     constructor() {
     }
-    private sample(items) {
-        items[Math.floor(Math.random() * items.length)];
-    }
     public newChar() {
 
     }
