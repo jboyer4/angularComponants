@@ -28,7 +28,7 @@ export type Skills = {
     stealth?: number;
     survival?: number;
 }
-export class character {
+export class Character {
     public attributes: Attributes;
     public charClass: string;
     public proficiencies?: Skills;
